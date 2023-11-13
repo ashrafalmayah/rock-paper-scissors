@@ -7,16 +7,87 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link rel="stylesheet" href="css/output.css">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
-<body>
+<body class="bg-gradient-to-b from-dark-blue to-indigo-950 min-h-screen p-6 font-primary uppercase text-white">
+  <!-- Details Section -->
+  <div class="border-gray-blue border-solid border-4 p-3 rounded-lg w-full flex justify-between items-center md:max-w-3xl md:mx-auto">
+    <img class="p-3 w-24" src="images/logo-bonus.svg" alt="Logo">
+    <div class="bg-white px-6 rounded-md py-2 text-center shadow-md">
+      <p class="text-indigo-400 font-bold ">score</p>
+      <span id="score" class="font-bold text-5xl text-gray-500">12</span>
+    </div>
+  </div>
+  <!-- End of Details Section -->
 
+  <!-- Game Section -->
+  <div id="game" class="w-3/5 md:max-w-xs md:mt-14 aspect-square absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-no-repeat bg-center bg-cover bg-[url('../images/bg-pentagon.svg')]">
+    <!-- Game Item -->
+    <div class="absolute cursor-pointer p-3 border-b-4 border-yellow-600 bg-yellow-500 rounded-full aspect-square w-24 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
+        <img src="/images/icon-scissors.svg" alt="Scissors">
+      </div>
+    </div>
+    <!-- Game Item -->
+    <div class="absolute cursor-pointer p-3 border-b-4 border-blue-600 bg-blue-500 rounded-full aspect-square w-24 top-1/2 -translate-y-2/3 right-0 translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
+        <img src="/images/icon-paper.svg" alt="Paper">
+      </div>
+    </div>
+    <!-- Game Item -->
+    <div class="absolute cursor-pointer p-3 border-b-4 border-red-600 bg-red-500 rounded-full aspect-square w-24 bottom-0 translate-y-1/2 right-0">
+      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
+        <img src="/images/icon-rock.svg" alt="Rock">
+      </div>
+    </div>
+    <!-- Game Item -->
+    <div class="absolute cursor-pointer p-3 border-b-4 border-purple-600 bg-purple-500 rounded-full aspect-square w-24 bottom-0 translate-y-1/2">
+      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
+        <img src="/images/icon-lizard.svg" alt="Lizard">
+      </div>
+    </div>
+    <!-- Game Item -->
+    <div class="absolute cursor-pointer p-3 border-b-4 border-cyan-600 bg-cyan-500 rounded-full aspect-square w-24 top-1/2 -translate-y-2/3 left-0 -translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
+        <img src="/images/icon-scissors.svg" alt="Scissors">
+      </div>
+    </div>
+  </div>
+  <!-- End of Game Section -->
 
+  <div id="result-section" class="hidden absolute left-0 top-1/2 -translate-y-[40%] flex flex-wrap w-full md:max-w-3xl md:left-1/2 md:-translate-x-1/2">
+    <div class="w-1/2 md:flex md:flex-col-reverse">
+      <div id="picked" class="relative rounded-full grid place-items-center mx-auto aspect-square w-3/5 m-5 bg-opacity-20">
+        <div id="win-effect" class="hidden absolute bg-radial-gradient aspect-square rounded-full w-[250%] -z-10"></div>
+      </div>
+      <div class="font-bold text-xl text-center">you picked</div>
+    </div>
+    <div class="w-1/2 md:flex md:flex-col-reverse">
+      <div id="house-pick" class="relative rounded-full grid place-items-center mx-auto aspect-square w-3/5 m-5 bg-black bg-opacity-20">
+        <div id="lose-effect" class="hidden absolute bg-radial-gradient aspect-square rounded-full w-[250%] -z-10"></div>
+      </div>
+      <div class="font-bold text-xl text-center">the house picked</div>
+    </div>
+    <div id="result" class="hidden text-center mx-auto mt-20">
+      <div id="result-header" class="text-6xl font-bold mb-5">you lose</div>
+      <button id="play-again" class="uppercase text-dark-blue font-semibold text-2xl bg-white px-16 py-3 rounded-lg">play again</button>
+    </div>
+  </div>
+
+  <button id="show-rules" class="uppercase cursor-pointer absolute bottom-12 left-1/2 md:left-auto md:right-6 md:bottom-6 -translate-x-1/2 md:translate-x-0 border-solid border-2 px-14 py-3 md:px-12 md:py-2 text-xl md:text-lg rounded-xl">rules</button>
   
-  <div class="text-sm">
-    Challenge by <a class="text-blue-500" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a class="text-blue-500" href="#">Your Name Here</a>.
+  <!-- Rules Sections -->
+  <div id="rules" class="hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-50">
+    <div class="absolute top-0 left-0 w-full h-full md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-72 md:h-1/2 z-10 bg-[length:90%] md:rounded-xl bg-no-repeat bg-center bg-[url('../images/image-rules-bonus.svg')] bg-white">
+      <div class=" text-center text-4xl font-bold mt-32 md:mt-5 md:text-2xl md:text-left md:ml-5 text-dark-blue md:leading-none">rules</div>
+      <button id="close-rules" class="cursor-pointer absolute bottom-12 left-1/2 -translate-x-1/2 md:bottom-auto md:top-5 md:left-auto md:right-5"><img src="images/icon-close.svg" alt=""></button>
+    </div>
   </div>
 </body>
 </html>
