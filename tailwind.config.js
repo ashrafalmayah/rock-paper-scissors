@@ -19,6 +19,12 @@ module.exports = {
         scaleUp: {
           '0%': { scale: '0'},
           '100%': { scale: '1'}
+        },
+        popUp: {
+          '0%': {
+             translate: '0 200px',
+             opacity: '0'
+          }
         }
       }
     },

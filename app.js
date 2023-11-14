@@ -63,6 +63,7 @@ function handleResult(pickName){
     setTimeout(() => {
         housePick.appendChild(randomPick);
         result.classList.remove('hidden');
+        resultSection.classList.add('show-result');
         const resultHeader = result.querySelector('#result-header');
         const gameResult = getResult(pickName, randomPick.dataset.item)
         resultHeader.textContent = gameResult;

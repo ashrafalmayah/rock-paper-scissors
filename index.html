@@ -15,7 +15,7 @@
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
-<body class="grid grid-rows-[auto,1fr,auto] place-items-center bg-gradient-to-b from-dark-blue to-indigo-950 min-h-screen p-6 font-primary uppercase text-white">
+<body class="grid grid-rows-[auto,1fr,auto] place-items-center bg-gradient-to-b from-dark-blue to-indigo-950 min-h-screen p-6 font-primary uppercase text-white overflow-hidden">
   <!-- Details Section -->
   <div class="border-gray-blue border-solid border-4 p-3 rounded-lg w-full  flex justify-between items-center md:max-w-3xl md:mx-auto">
     <img class="p-3 w-24" src="./images/logo-bonus.svg" alt="Logo">
@@ -61,20 +61,20 @@
   </div>
   <!-- End of Game Section -->
 
-  <div id="result-section" class="hidden flex flex-wrap w-full md:max-w-3xl">
-    <div class="w-1/2 md:flex md:flex-col-reverse">
+  <div id="result-section" class="hidden group flex flex-wrap w-full md:max-w-3xl">
+    <div class="w-1/2 md:flex md:flex-col-reverse md:group-[.show-result]:-translate-x-28 transition duration-1000">
       <div id="picked" class="relative rounded-full grid place-items-center mx-auto aspect-square w-3/5 m-5 bg-opacity-20">
         <div id="win-effect" class="hidden animate-[scaleUp_1s_ease] absolute bg-win-radial-gradient aspect-square rounded-full w-[250%] -z-10"></div>
       </div>
       <div class="font-bold text-xl text-center">you picked</div>
     </div>
-    <div class="w-1/2 md:flex md:flex-col-reverse">
+    <div class="w-1/2 md:flex md:flex-col-reverse md:group-[.show-result]:translate-x-28 transition duration-1000">
       <div id="house-pick" class="relative rounded-full grid place-items-center mx-auto aspect-square w-3/5 m-5 bg-black bg-opacity-20">
         <div id="lose-effect" class="hidden animate-[scaleUp_1s_ease] absolute bg-lose-radial-gradient aspect-square rounded-full w-[250%] -z-10"></div>
       </div>
       <div class="font-bold text-xl text-center">the house picked</div>
     </div>
-    <div id="result" class="hidden text-center mx-auto mt-20">
+    <div id="result" class="hidden text-center mx-auto mt-4 md:animate-[popUp_1s_ease] md:group-[.show-result]:absolute md:group-[.show-result]:left-1/2 md:group-[.show-result]:top-1/2 md:group-[.show-result]:-translate-x-1/2 md:group-[.show-result]:-translate-y-1/2 transition duration-1000">
       <div id="result-header" class="text-6xl font-bold mb-5">you lose</div>
       <button id="play-again" class="uppercase text-dark-blue font-semibold text-2xl bg-white px-16 py-3 rounded-lg">play again</button>
     </div>
