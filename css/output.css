@@ -599,6 +599,10 @@ video {
   margin-top: 1rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -637,6 +641,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .-translate-x-1\/2 {
@@ -694,12 +702,24 @@ video {
   flex-wrap: wrap;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .place-items-center {
   place-items: center;
 }
 
+.content-center {
+  align-content: center;
+}
+
 .items-center {
   align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
 }
 
 .justify-between {
@@ -916,8 +936,30 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-primary {
@@ -961,6 +1003,14 @@ video {
   text-transform: uppercase;
 }
 
+.leading-3 {
+  line-height: .75rem;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
+}
+
 .text-dark-blue {
   --tw-text-opacity: 1;
   color: rgb(32 59 92 / var(--tw-text-opacity));
@@ -979,6 +1029,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -1061,6 +1116,10 @@ video {
     height: 50%;
   }
 
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-36 {
     width: 9rem;
   }
@@ -1069,12 +1128,28 @@ video {
     width: 18rem;
   }
 
+  .md\:w-3 {
+    width: 0.75rem;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
+  }
+
+  .md\:w-28 {
+    width: 7rem;
+  }
+
   .md\:max-w-3xl {
     max-width: 48rem;
   }
 
   .md\:max-w-xs {
     max-width: 20rem;
+  }
+
+  .md\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .md\:-translate-x-1\/2 {
@@ -1104,6 +1179,10 @@ video {
 
   .md\:rounded-xl {
     border-radius: 0.75rem;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 
   .md\:px-12 {
