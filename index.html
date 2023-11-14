@@ -29,33 +29,33 @@
   <!-- Game Section -->
   <div id="game-section" class="relative w-3/5 md:max-w-xs md:mt-14 aspect-square bg-no-repeat bg-center bg-cover bg-[url('../images/bg-pentagon.svg')]">
     <!-- Game Item -->
-    <div data-item="scissors" class="absolute cursor-pointer p-3 border-b-4 border-yellow-600 bg-yellow-500 rounded-full aspect-square w-24 -translate-y-1/2 left-1/2 -translate-x-1/2">
-      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
-        <img src="./images/icon-scissors.svg" alt="Scissors">
+    <div data-item="scissors" class="absolute cursor-pointer p-3 border-b-4 border-yellow-600 bg-yellow-500 rounded-full aspect-square w-24 md:w-36 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full border-gray-300 border-t-4 bg-white" >
+        <img class="w-1/2" src="./images/icon-scissors.svg" alt="Scissors">
       </div>
     </div>
     <!-- Game Item -->
-    <div data-item="paper" class="absolute cursor-pointer p-3 border-b-4 border-blue-600 bg-blue-500 rounded-full aspect-square w-24 top-1/2 -translate-y-2/3 right-0 translate-x-1/2">
-      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
-        <img src="./images/icon-paper.svg" alt="Paper">
+    <div data-item="paper" class="absolute cursor-pointer p-3 border-b-4 border-blue-600 bg-blue-500 rounded-full aspect-square w-24 md:w-36 top-1/2 -translate-y-2/3 right-0 translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full border-gray-300 border-t-4 bg-white" >
+        <img class="w-1/2" src="./images/icon-paper.svg" alt="Paper">
       </div>
     </div>
     <!-- Game Item -->
-    <div data-item="rock" class="absolute cursor-pointer p-3 border-b-4 border-red-600 bg-red-500 rounded-full aspect-square w-24 bottom-0 translate-y-1/2 right-0">
-      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
-        <img src="./images/icon-rock.svg" alt="Rock">
+    <div data-item="rock" class="absolute cursor-pointer p-3 border-b-4 border-red-600 bg-red-500 rounded-full aspect-square w-24 md:w-36 bottom-0 translate-y-1/2 right-0">
+      <div class="aspect-square grid place-items-center rounded-full border-gray-300 border-t-4 bg-white" >
+        <img class="w-1/2" src="./images/icon-rock.svg" alt="Rock">
       </div>
     </div>
     <!-- Game Item -->
-    <div data-item="lizard" class="absolute cursor-pointer p-3 border-b-4 border-purple-600 bg-purple-500 rounded-full aspect-square w-24 bottom-0 translate-y-1/2">
-      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
-        <img src="./images/icon-lizard.svg" alt="Lizard">
+    <div data-item="lizard" class="absolute cursor-pointer p-3 border-b-4 border-purple-600 bg-purple-500 rounded-full aspect-square w-24 md:w-36 bottom-0 translate-y-1/2">
+      <div class="aspect-square grid place-items-center rounded-full border-gray-300 border-t-4 bg-white" >
+        <img class="w-1/2" src="./images/icon-lizard.svg" alt="Lizard">
       </div>
     </div>
     <!-- Game Item -->
-    <div data-item="spock" class="absolute cursor-pointer p-3 border-b-4 border-cyan-600 bg-cyan-500 rounded-full aspect-square w-24 top-1/2 -translate-y-2/3 left-0 -translate-x-1/2">
-      <div class="aspect-square grid place-items-center rounded-full px-5 border-gray-300 border-t-4 bg-white" >
-        <img src="./images/icon-spock.svg" alt="spock">
+    <div data-item="spock" class="absolute cursor-pointer p-3 border-b-4 border-cyan-600 bg-cyan-500 rounded-full aspect-square w-24 md:w-36 top-1/2 -translate-y-2/3 left-0 -translate-x-1/2">
+      <div class="aspect-square grid place-items-center rounded-full border-gray-300 border-t-4 bg-white" >
+        <img class="w-1/2" src="./images/icon-spock.svg" alt="spock">
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@
       </div>
       <div class="font-bold text-xl text-center">the house picked</div>
     </div>
-    <div id="result" class="hidden text-center mx-auto mt-4 md:animate-[popUp_1s_ease] md:group-[.show-result]:absolute md:group-[.show-result]:left-1/2 md:group-[.show-result]:top-1/2 md:group-[.show-result]:-translate-x-1/2 md:group-[.show-result]:-translate-y-1/2 transition duration-1000">
+    <div id="result" class="hidden text-center mx-auto mt-4 md:mt-0 md:animate-[popUp_1s_ease] md:group-[.show-result]:absolute md:group-[.show-result]:left-1/2 md:group-[.show-result]:top-1/2 md:group-[.show-result]:-translate-x-1/2 transition duration-1000">
       <div id="result-header" class="text-6xl font-bold mb-5">you lose</div>
       <button id="play-again" class="uppercase text-dark-blue font-semibold text-2xl bg-white px-16 py-3 rounded-lg">play again</button>
     </div>

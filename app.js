@@ -6,7 +6,9 @@ const closeRulesBtn = document.getElementById('close-rules');
 const gameItems = gameSection.querySelectorAll('[data-item]');
 const playAgainBtn = document.getElementById('play-again');
 const scoreElement = document.getElementById('score');
-const originalPage = document.documentElement.innerHTML;
+const housePick = resultSection.querySelector('#house-pick');
+const picked = resultSection.querySelector('#picked');
+const result = resultSection.querySelector('#result');
 let score = 0;
 
 if(localStorage.getItem('score') != null){
@@ -17,42 +19,33 @@ scoreElement.textContent = score;
 
 function handlePick(){
     const gameSectionRect = gameSection.getBoundingClientRect();
-    const picked = resultSection.querySelector('#picked');
     const pickedItem = this.cloneNode(true);
-    document.querySelector('body').appendChild(pickedItem);
-
-    pickedItem.style.left = `${this.offsetLeft + gameSectionRect.left}px`;
-    pickedItem.style.top = `${this.offsetTop + gameSectionRect.top}px`;
-
+    picked.appendChild(pickedItem);
+    const desiredLeft = this.offsetLeft + gameSectionRect.left;
+    const desiredTop = this.offsetTop + gameSectionRect.top;
+    
     resultSection.classList.remove('hidden');
     gameSection.classList.add('hidden');
 
-    const pickedRect = picked.getBoundingClientRect();
+    pickedItem.style.left = `${desiredLeft - picked.offsetLeft}px`;
+    pickedItem.style.top = `${desiredTop - picked.offsetTop}px`;
+
+    console.log(picked.getBoundingClientRect());
+    console.dir(picked);
+
 
     pickedItem.animate({
-        transform: "translate(0)",
-        left: `${pickedRect.left}px`,
-        top: `${pickedRect.top}px`,
-        width: `${pickedRect.width}px`,
-        innerHeight: `${pickedRect.height}px`,
-    }, 300);
-    setTimeout(() => {
-        pickedItem.style.width = '100%';
-        pickedItem.style.height = '100%';
-        pickedItem.style.top = '0';
-        pickedItem.style.left = '0';
-        pickedItem.style.transform = 'translate(0)';
-        document.querySelector('body').removeChild(pickedItem);
-        picked.appendChild(pickedItem);
-    }, 300);
+        width : `${picked.offsetWidth}px`,
+        top : '0',
+        left : '0',
+        transform : 'translate(0)',
+    }, {duration: 500, fill: 'forwards'});
 
     handleResult(pickedItem.dataset.item);
 }
 
 function handleResult(pickName){
     const randomPick = gameItems[Math.floor(Math.random() * gameItems.length)].cloneNode(true);
-    const housePick = resultSection.querySelector('#house-pick');
-    const result = resultSection.querySelector('#result');
 
     randomPick.style.width = '100%';
     randomPick.style.height = '100%';
@@ -111,7 +104,21 @@ function getResult(userPick, housePick){
 }
 
 function playAgain(){
-    location.reload();
+    //Show game again
+    gameSection.classList.remove('hidden');
+
+    // Clear effects
+    document.querySelector('#win-effect').classList.add('hidden');
+    document.querySelector('#lose-effect').classList.add('hidden');
+
+    //Clear Picks
+    housePick.removeChild(housePick.lastChild);
+    picked.removeChild(picked.lastChild);
+
+    // Clear results
+    resultSection.classList.add('hidden');
+    resultSection.classList.remove('show-result');
+    result.classList.add('hidden');
 }
 
 showRulesBtn.addEventListener('click', () => rulesSection.classList.remove('hidden'));
