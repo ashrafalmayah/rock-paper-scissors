@@ -44,7 +44,7 @@ function handlePick(){
         pickedItem.style.transform = 'translate(0)';
         document.querySelector('body').removeChild(pickedItem);
         picked.appendChild(pickedItem);
-    }, 299);
+    }, 300);
 
     handleResult(pickedItem.dataset.item);
 }
@@ -70,7 +70,7 @@ function handleResult(pickName){
             localStorage.setItem('score', ++score);
             resultSection.querySelector('#win-effect').classList.remove('hidden');
         }else if(gameResult == 'you lose'){
-            localStorage.setItem('score', --score);
+            localStorage.setItem('score', score > 0 ? --score : score);
             resultSection.querySelector('#lose-effect').classList.remove('hidden');
         }
         scoreElement.textContent = score;
